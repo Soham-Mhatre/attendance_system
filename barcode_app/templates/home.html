@@ -1,0 +1,26 @@
+<!-- home.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <title>Home</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Attendance System</h1>
+    </div>
+    <form method="post">
+    {% csrf_token %}
+        <div class="btns">
+            <button class="btn1 btn" name="btn1"><a href="{% url 'barcode_input' %}">  Start Attendance </a></button>
+            <button class="btn2 btn" name="btn2"><a href="{% url 'barcode_display' %}">Display Attendance</a></button>
+    
+        </div>
+    </form>
+</body>
+</html>

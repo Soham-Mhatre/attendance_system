@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F8F6E3;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .navbar {
+            background-color: #97E7E1;
+            text-align: center;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Added margin to separate navbar from content */
+        }
+        .navbar h2 {
+            color: #00000060;
+            font-size: 2rem;
+        }
+        .display {
+            display: flex;
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 12%;
+            justify-content: center;
+        }
+        .group1, .group2, .group3 {
+            padding: 20px;
+            margin: 15px;
+            font-size: 1.4rem;
+            background-color: #6AD4DD;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .group1:hover, .group2:hover, .group3:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .lbl {
+            padding-right: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .drp {
+            background-color: #6AD4DD;
+            border-radius: 5px;
+            color: white;
+        }
+        .btn6 {
+            margin-left: 40%;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 1.4rem;
+            background-color: #6AD4DD;
+            color: white;
+            border: none;
+            padding: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .btn6:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .table{
+            margin-left: auto;
+            margin-right: auto;
+            max-width: fit-content;
+            margin-top: 120px;
+            color: black;
+            font-size: 1.7rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="table">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Present</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in s3s4_data %}
+            <tr>
+                <td>{{ data.rollno }}</td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.present }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>  
+</body>
+</html>

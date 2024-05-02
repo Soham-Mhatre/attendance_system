@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Display</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    
+    <h1>Barcode Display</h1>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+    <p>Barcode Data: {{ barcode_data }}</p>
+    <p>Time Slot: {{ time_slot }}</p>
+    <p>Scan Time: {{ scan_time }}</p>
+    <p>Day: {{ day }}</p>
+    
+    {% if error_message %}
+        <p>Error: {{ error_message }}</p>
+    {% endif %}
+
+    <!-- Add a specific class or ID to the "Start Scan" button -->
+    <button class="btn3" id="startScanButton">Start Scan</button>
+    <!-- Other buttons without the class or ID -->
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

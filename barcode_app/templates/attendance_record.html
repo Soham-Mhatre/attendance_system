@@ -1,0 +1,35 @@
+<!-- attendance_record.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Record</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h2>Select the attendance record</h2>
+        </div>
+        <table border="1">
+            <tr>
+                <th>Student</th>
+                <th>Attendance</th>
+            </tr>
+            {% for data in s3s4_data %}
+                <tr>
+                    <td>{{ data.student }}</td>
+                    <td>{{ data.attendance }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <form action="{% url 'attendance_record' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group4">
+                <button type="submit" class="btn6">Check for Attendance record</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

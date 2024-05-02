@@ -1,0 +1,37 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Login</title>
+</head>
+<body class="login">
+    <div class="navbar">
+    <h2>Admin Login</h2>
+    </div>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="form">
+        <div class="user1">
+        <label class="user" for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        </div>
+        <div class="user2">
+        <label class="pwd" for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        
+        </div>
+        
+        <button class="btn3" type="submit">Login</button>
+        
+        </div>
+    </form>
+</body>
+</html>
